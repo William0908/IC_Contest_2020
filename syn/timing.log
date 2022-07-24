@@ -1,0 +1,64 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SME
+Version: M-2016.12
+Date   : Sun Jul 24 20:30:06 2022
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: ispattern (input port clocked by clk)
+  Endpoint: pattern_cnt_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SME                tsmc13_wl10           slow
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (fall edge)                   10.00      10.00
+  clock network delay (ideal)              0.50      10.50
+  input external delay                     0.00      10.50 r
+  ispattern (in)                           0.00      10.50 r
+  U1763/Y (CLKINVX1)                       0.29      10.80 f
+  U1391/Y (NAND2X1)                        0.60      11.39 r
+  U1394/Y (OA21XL)                         0.58      11.98 r
+  U1715/Y (NAND2X1)                        0.22      12.19 f
+  U1714/Y (AOI222XL)                       0.76      12.96 r
+  U955/Y (OAI211X2)                        0.63      13.58 f
+  U1389/Y (NOR2X1)                         0.65      14.23 r
+  U1281/Y (CLKINVX1)                       0.45      14.69 f
+  U1256/Y (NOR2X2)                         0.60      15.28 r
+  U1222/Y (INVX3)                          0.38      15.67 f
+  U1280/Y (NOR2X1)                         0.42      16.09 r
+  U1731/Y (AOI22X1)                        0.31      16.40 f
+  U1117/Y (OAI21XL)                        0.52      16.92 r
+  U1279/Y (NOR2BX1)                        0.44      17.36 f
+  U1720/Y (OAI221XL)                       0.57      17.93 r
+  U1718/Y (AOI222XL)                       0.33      18.26 f
+  U1717/Y (OAI221XL)                       0.36      18.62 r
+  pattern_cnt_reg[3]/D (DFFRX1)            0.00      18.62 r
+  data arrival time                                  18.62
+
+  clock clk (rise edge)                   20.00      20.00
+  clock network delay (ideal)              0.50      20.50
+  clock uncertainty                       -0.10      20.40
+  pattern_cnt_reg[3]/CK (DFFRX1)           0.00      20.40 r
+  library setup time                      -0.30      20.10
+  data required time                                 20.10
+  -----------------------------------------------------------
+  data required time                                 20.10
+  data arrival time                                 -18.62
+  -----------------------------------------------------------
+  slack (MET)                                         1.48
+
+
+1
